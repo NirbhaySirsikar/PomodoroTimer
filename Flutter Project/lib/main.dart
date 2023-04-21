@@ -138,8 +138,18 @@ class _HomePageState extends State<HomePage> {
               flex: 2,
               child: Container(
                 height: double.infinity,
-                color: Colors.yellow,
-                child: Center(child: Text("Widget 4")),
+                child: Center(
+                  child: GlowContainer(
+                    blurRadius: 50,
+                    glowColor: color1,
+                    offset: Offset(0, 0),
+                    color: color1,
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    height: 70,
+                    width: 70,
+                    child: Icon(FontAwesomeIcons.pause, size: 35),
+                  ),
+                ),
               ),
             ),
           ],
@@ -154,7 +164,7 @@ class _HomePageState extends State<HomePage> {
           ),
           GlowIcon(
             offset: Offset(0, 0),
-            blurRadius: 10,
+            blurRadius: 20,
             FontAwesomeIcons.clock,
             size: 20,
             color: color2,
@@ -288,13 +298,12 @@ class DonutSlider extends StatelessWidget {
         tickMarkShape: RoundSliderTickMarkShape(
           tickMarkRadius: 6,
         ),
-        overlayColor: Colors.transparent, 
+        overlayColor: Colors.transparent,
         inactiveTickMarkColor: color3,
         inactiveTrackColor: color3,
         thumbColor: color1,
         activeTrackColor: color3,
         activeTickMarkColor: color1,
-
       ),
       child: Slider(
         min: min.toDouble(),
