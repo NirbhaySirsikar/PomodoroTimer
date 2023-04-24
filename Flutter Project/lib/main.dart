@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pomotimer/circular_slider.dart';
 import 'package:pomotimer/theme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_glow/flutter_glow.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 // ignore_for_file: prefer_const_constructors
 void main() {
@@ -83,8 +85,29 @@ class _HomePageState extends State<HomePage> {
               flex: 5,
               child: Container(
                 height: double.infinity,
-                color: Colors.green,
-                child: Center(child: Text("Widget 2")),
+                child: Center(
+                  child: CircularSlider(onAngleChanged: (value) => value=270,),
+                  // child: SleekCircularSlider(
+                  //   appearance: CircularSliderAppearance(
+                  //     size: 225,
+                  //     customColors: CustomSliderColors(
+                  //         trackColor: Colors.transparent,
+                  //         hideShadow: true,
+                  //         progressBarColors: [Colors.transparent, color1],
+                  //         dynamicGradient: true),
+                  //     infoProperties: InfoProperties(
+                  //       mainLabelStyle: TextStyle(color: Colors.white),
+                  //     ),
+                  //     customWidths: CustomSliderWidths(progressBarWidth: 10,handlerSize: 10),
+                  //     angleRange: 360,
+                  //     startAngle: 270,
+                  //   ),
+                  //   initialValue: 75,
+                  //   onChange: (double value) {
+                  //     print(value);
+                  //   },
+                  // ),
+                ),
               ),
             ),
             Expanded(
@@ -167,7 +190,7 @@ class _HomePageState extends State<HomePage> {
             blurRadius: 20,
             FontAwesomeIcons.clock,
             size: 20,
-            color: color2,
+            color: color1,
           ),
           Icon(
             FontAwesomeIcons.sliders,
