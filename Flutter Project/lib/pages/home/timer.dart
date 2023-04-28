@@ -1,7 +1,7 @@
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'utils.dart';
+import '../../utils.dart';
 
 double radius = 130;
 double radiusActive = 115;
@@ -49,8 +49,16 @@ class _CircularSliderState extends State<CircularSlider> {
             glowColor: Color(0xff664eff),
             color: Color(0xff232330),
             shape: BoxShape.circle,
-            height: 220,width:220,spreadRadius: -10,
-            child: Center(child: Text('05:24',style: TextStyle(fontSize: 50,),)),
+            height: 220,
+            width: 220,
+            spreadRadius: -10,
+            child: Center(
+                child: Text(
+              '05:24',
+              style: TextStyle(
+                fontSize: 50,
+              ),
+            )),
           ),
         ),
         Positioned(
