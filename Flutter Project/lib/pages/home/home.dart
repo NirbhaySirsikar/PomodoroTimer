@@ -3,6 +3,7 @@ import 'package:pomotimer/pages/home/slider.dart';
 import 'package:pomotimer/pages/home/timer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_glow/flutter_glow.dart';
+import 'package:pomotimer/pages/home/title.dart';
 import 'bottom_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: color0,
       appBar: AppBar(
         title: const Center(
@@ -42,25 +44,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             Expanded(
               flex: 2,
-              child: Container(
-                decoration: BoxDecoration(
-                    color: color2,
-                    borderRadius: const BorderRadius.all(Radius.circular(100))),
-
-                width: MediaQuery.of(context).size.width,
-                // height: ,
-                margin: const EdgeInsets.fromLTRB(20, 35, 20, 35),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    Text('Task: Write an article',
-                        style: TextStyle(fontSize: 18)),
-                    Icon(
-                      FontAwesomeIcons.pen,
-                      size: 18,
-                    ),
-                  ],
-                ),
+              child: Center(
+                child: GoalTitle(color2: color2),
               ),
             ),
             Expanded(
