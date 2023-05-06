@@ -6,6 +6,9 @@ class MyTextFieldWidget extends StatefulWidget {
   _MyTextFieldWidgetState createState() => _MyTextFieldWidgetState();
 }
 
+double height = 70;
+late double width;
+
 class _MyTextFieldWidgetState extends State<MyTextFieldWidget> {
   TextEditingController? _textController;
 
@@ -53,12 +56,17 @@ class GoalTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    width= MediaQuery.of(context).size.width - 50;
     return Container(
       decoration: BoxDecoration(
           color: color2,
           borderRadius: const BorderRadius.all(Radius.circular(100))),
+          // TODO: replace below size with the height and width variable and add an onTap function to change it to a fullscreen thing
       height: 70,
       width: MediaQuery.of(context).size.width - 50,
+      // height: 70,
+      // width: MediaQuery.of(context).size.width - 50,
       // width: MediaQuery.of(context).size.width,
       // margin: const EdgeInsets.fromLTRB(20, 35, 20, 35),
       child: Row(
